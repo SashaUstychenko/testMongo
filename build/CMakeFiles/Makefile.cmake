@@ -11,6 +11,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.29.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.29.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.29.3/CMakeSystem.cmake"
+<<<<<<< HEAD
   "/usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake"
   "/usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfigVersion.cmake"
   "/usr/lib/x86_64-linux-gnu/cmake/BoostDetectToolset-1.83.0.cmake"
@@ -28,6 +29,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/lib/x86_64-linux-gnu/cmake/boost_system-1.83.0/boost_system-config.cmake"
   "/usr/lib/x86_64-linux-gnu/cmake/boost_system-1.83.0/libboost_system-variant-shared.cmake"
   "/usr/lib/x86_64-linux-gnu/cmake/boost_system-1.83.0/libboost_system-variant-static.cmake"
+=======
+>>>>>>> 6da55aee34b570602d502dcbb34025608f34d10f
   "/usr/share/cmake-3.29/Modules/CMakeCCompiler.cmake.in"
   "/usr/share/cmake-3.29/Modules/CMakeCCompilerABI.c"
   "/usr/share/cmake-3.29/Modules/CMakeCInformation.cmake"
@@ -115,7 +118,10 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake-3.29/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake"
   "/usr/share/cmake-3.29/Modules/Compiler/zOS-C-DetermineCompiler.cmake"
   "/usr/share/cmake-3.29/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake"
+<<<<<<< HEAD
   "/usr/share/cmake-3.29/Modules/FindBoost.cmake"
+=======
+>>>>>>> 6da55aee34b570602d502dcbb34025608f34d10f
   "/usr/share/cmake-3.29/Modules/FindPackageHandleStandardArgs.cmake"
   "/usr/share/cmake-3.29/Modules/FindPackageMessage.cmake"
   "/usr/share/cmake-3.29/Modules/FindPkgConfig.cmake"
