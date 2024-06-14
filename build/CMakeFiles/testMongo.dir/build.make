@@ -92,6 +92,9 @@ testMongo_EXTERNAL_OBJECTS =
 
 testMongo: CMakeFiles/testMongo.dir/main.cpp.o
 testMongo: CMakeFiles/testMongo.dir/build.make
+testMongo: /usr/lib/x86_64-linux-gnu/libboost_system.so.1.83.0
+testMongo: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.83.0
+testMongo: /usr/lib/x86_64-linux-gnu/libboost_atomic.so.1.83.0
 testMongo: CMakeFiles/testMongo.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/zirer/zirerfile/fileC++/testMongo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable testMongo"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/testMongo.dir/link.txt --verbose=$(VERBOSE)
