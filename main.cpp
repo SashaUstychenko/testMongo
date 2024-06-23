@@ -1,4 +1,3 @@
-#include <boost/asio/ip/tcp.hpp>
 #include <iostream>
 #include <string>
 #include <iterator>
@@ -11,7 +10,6 @@
 
 #include <bsoncxx/json.hpp>
 #include <bsoncxx/builder/stream/document.hpp>
-
 
 #include <boost/filesystem.hpp>
 #include <boost/asio.hpp>

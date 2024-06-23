@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/testMongo.dir/main.cpp.o -o testMongo  -lmongocxx -lbsoncxx /usr/local/lib/libbcrypt.a -lbsoncxx /usr/lib/x86_64-linux-gnu/libboost_system.so.1.83.0 /usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.83.0 /usr/local/lib/libbcrypt.a /usr/lib/x86_64-linux-gnu/libboost_atomic.so.1.83.0

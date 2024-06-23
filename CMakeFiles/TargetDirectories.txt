@@ -1,0 +1,3 @@
+/home/zirer/zirerfile/fileC++/testMongo/CMakeFiles/testMongo.dir
+/home/zirer/zirerfile/fileC++/testMongo/CMakeFiles/edit_cache.dir
+/home/zirer/zirerfile/fileC++/testMongo/CMakeFiles/rebuild_cache.dir

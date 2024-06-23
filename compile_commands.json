@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/home/zirer/zirerfile/fileC++/testMongo",
+  "command": "/usr/bin/c++ -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_SYSTEM_DYN_LINK -DBOOST_SYSTEM_NO_LIB -I/usr/local/include/mongocxx/v_noabi -I/usr/local/include/bsoncxx/v_noabi/bsoncxx/third_party/mnmlstc -I/usr/local/include/bsoncxx/v_noabi -I\"/**\" -std=gnu++17 -o CMakeFiles/testMongo.dir/main.cpp.o -c /home/zirer/zirerfile/fileC++/testMongo/main.cpp",
+  "file": "/home/zirer/zirerfile/fileC++/testMongo/main.cpp",
+  "output": "CMakeFiles/testMongo.dir/main.cpp.o"
+}
+]
