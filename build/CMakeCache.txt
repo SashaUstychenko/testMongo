@@ -14,7 +14,9 @@
 # EXTERNAL cache entries
 ########################
 
-<<<<<<< HEAD
+//Path to a library.
+BCRYPT_LIBRARY:FILEPATH=/usr/local/lib/libbcrypt.a
+
 //The directory containing a CMake configuration file for Boost.
 Boost_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0
 
@@ -25,8 +27,6 @@ Boost_INCLUDE_DIR:PATH=/usr/include
 
 Boost_SYSTEM_LIBRARY_RELEASE:STRING=/usr/lib/x86_64-linux-gnu/libboost_system.so.1.83.0
 
-=======
->>>>>>> 6da55aee34b570602d502dcbb34025608f34d10f
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=/usr/bin/addr2line
 
@@ -234,7 +234,6 @@ PKG_CONFIG_ARGN:STRING=
 //pkg-config executable
 PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
 
-<<<<<<< HEAD
 //The directory containing a CMake configuration file for boost_atomic.
 boost_atomic_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/boost_atomic-1.83.0
 
@@ -247,11 +246,6 @@ boost_headers_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.83.0
 //The directory containing a CMake configuration file for boost_system.
 boost_system_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/boost_system-1.83.0
 
-//Path to a library.
-pkgcfg_lib_BCRYPT_crypt:FILEPATH=/usr/lib/x86_64-linux-gnu/libcrypt.so
-
-=======
->>>>>>> 6da55aee34b570602d502dcbb34025608f34d10f
 //Path to a library.
 pkgcfg_lib_BSONCXX_bsoncxx:FILEPATH=/usr/local/lib/libbsoncxx.so
 
@@ -275,44 +269,6 @@ testMongo_SOURCE_DIR:STATIC=/home/zirer/zirerfile/fileC++/testMongo
 # INTERNAL cache entries
 ########################
 
-<<<<<<< HEAD
-BCRYPT_CFLAGS:INTERNAL=-I/usr/include
-BCRYPT_CFLAGS_I:INTERNAL=
-BCRYPT_CFLAGS_OTHER:INTERNAL=
-BCRYPT_FOUND:INTERNAL=1
-BCRYPT_INCLUDEDIR:INTERNAL=/usr/include
-BCRYPT_INCLUDE_DIRS:INTERNAL=/usr/include
-BCRYPT_LDFLAGS:INTERNAL=-L/usr/lib/x86_64-linux-gnu;-lcrypt
-BCRYPT_LDFLAGS_OTHER:INTERNAL=
-BCRYPT_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
-BCRYPT_LIBRARIES:INTERNAL=crypt
-BCRYPT_LIBRARY_DIRS:INTERNAL=/usr/lib/x86_64-linux-gnu
-BCRYPT_LIBS:INTERNAL=
-BCRYPT_LIBS_L:INTERNAL=
-BCRYPT_LIBS_OTHER:INTERNAL=
-BCRYPT_LIBS_PATHS:INTERNAL=
-BCRYPT_MODULE_NAME:INTERNAL=libcrypt
-BCRYPT_PREFIX:INTERNAL=/usr
-BCRYPT_STATIC_CFLAGS:INTERNAL=-I/usr/include
-BCRYPT_STATIC_CFLAGS_I:INTERNAL=
-BCRYPT_STATIC_CFLAGS_OTHER:INTERNAL=
-BCRYPT_STATIC_INCLUDE_DIRS:INTERNAL=/usr/include
-BCRYPT_STATIC_LDFLAGS:INTERNAL=-L/usr/lib/x86_64-linux-gnu;-lcrypt
-BCRYPT_STATIC_LDFLAGS_OTHER:INTERNAL=
-BCRYPT_STATIC_LIBDIR:INTERNAL=
-BCRYPT_STATIC_LIBRARIES:INTERNAL=crypt
-BCRYPT_STATIC_LIBRARY_DIRS:INTERNAL=/usr/lib/x86_64-linux-gnu
-BCRYPT_STATIC_LIBS:INTERNAL=
-BCRYPT_STATIC_LIBS_L:INTERNAL=
-BCRYPT_STATIC_LIBS_OTHER:INTERNAL=
-BCRYPT_STATIC_LIBS_PATHS:INTERNAL=
-BCRYPT_VERSION:INTERNAL=4.4.36
-BCRYPT_libcrypt_INCLUDEDIR:INTERNAL=
-BCRYPT_libcrypt_LIBDIR:INTERNAL=
-BCRYPT_libcrypt_PREFIX:INTERNAL=
-BCRYPT_libcrypt_VERSION:INTERNAL=
-=======
->>>>>>> 6da55aee34b570602d502dcbb34025608f34d10f
 BSONCXX_CFLAGS:INTERNAL=-I/usr/local/include/bsoncxx/v_noabi/bsoncxx/third_party/mnmlstc;-I/usr/local/include/bsoncxx/v_noabi;-I/usr/local/include
 BSONCXX_CFLAGS_I:INTERNAL=
 BSONCXX_CFLAGS_OTHER:INTERNAL=
@@ -348,11 +304,8 @@ BSONCXX_libbsoncxx_INCLUDEDIR:INTERNAL=
 BSONCXX_libbsoncxx_LIBDIR:INTERNAL=
 BSONCXX_libbsoncxx_PREFIX:INTERNAL=
 BSONCXX_libbsoncxx_VERSION:INTERNAL=
-<<<<<<< HEAD
 //ADVANCED property for variable: Boost_DIR
 Boost_DIR-ADVANCED:INTERNAL=1
-=======
->>>>>>> 6da55aee34b570602d502dcbb34025608f34d10f
 //ADVANCED property for variable: CMAKE_ADDR2LINE
 CMAKE_ADDR2LINE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_AR
@@ -498,11 +451,8 @@ CMAKE_TAPI-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
-<<<<<<< HEAD
 //Details about finding Boost
 FIND_PACKAGE_MESSAGE_DETAILS_Boost:INTERNAL=[/usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake][cfound components: system filesystem ][v1.83.0()]
-=======
->>>>>>> 6da55aee34b570602d502dcbb34025608f34d10f
 //Details about finding PkgConfig
 FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/usr/bin/pkg-config][v1.8.1()]
 MONGOCXX_CFLAGS:INTERNAL=-I/usr/local/include/mongocxx/v_noabi;-I/usr/local/include;-I/usr/local/include/bsoncxx/v_noabi/bsoncxx/third_party/mnmlstc;-I/usr/local/include/bsoncxx/v_noabi
@@ -546,8 +496,6 @@ PKG_CONFIG_ARGN-ADVANCED:INTERNAL=1
 PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
 //linker supports push/pop state
 _CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED:INTERNAL=TRUE
-<<<<<<< HEAD
-__pkg_config_checked_BCRYPT:INTERNAL=1
 __pkg_config_checked_BSONCXX:INTERNAL=1
 __pkg_config_checked_MONGOCXX:INTERNAL=1
 //ADVANCED property for variable: boost_atomic_DIR
@@ -558,12 +506,6 @@ boost_filesystem_DIR-ADVANCED:INTERNAL=1
 boost_headers_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: boost_system_DIR
 boost_system_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: pkgcfg_lib_BCRYPT_crypt
-pkgcfg_lib_BCRYPT_crypt-ADVANCED:INTERNAL=1
-=======
-__pkg_config_checked_BSONCXX:INTERNAL=1
-__pkg_config_checked_MONGOCXX:INTERNAL=1
->>>>>>> 6da55aee34b570602d502dcbb34025608f34d10f
 //ADVANCED property for variable: pkgcfg_lib_BSONCXX_bsoncxx
 pkgcfg_lib_BSONCXX_bsoncxx-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_MONGOCXX_bsoncxx

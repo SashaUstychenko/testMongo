@@ -1,36 +1,27 @@
 cmake_minimum_required(VERSION 3.10)
 project(testMongo)
 
-<<<<<<< HEAD
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(PkgConfig REQUIRED)
 find_package(Boost REQUIRED COMPONENTS system filesystem)
 
-pkg_search_module(BCRYPT REQUIRED libcrypt)
-=======
-set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
-find_package(PkgConfig REQUIRED)
-
->>>>>>> 6da55aee34b570602d502dcbb34025608f34d10f
 pkg_search_module(MONGOCXX REQUIRED libmongocxx)
 pkg_search_module(BSONCXX REQUIRED libbsoncxx)
 
+
 include_directories(${MONGOCXX_INCLUDE_DIRS})
 include_directories(${BSONCXX_INCLUDE_DIRS})
-<<<<<<< HEAD
 include_directories(${Boost_INCLUDE_DIRS})
-include_directories(${BCRYPT_INCLUDE_DIRS})
+
+find_library(BCRYPT_LIBRARY bcrypt)
 
 add_executable(testMongo main.cpp)
-target_link_libraries(testMongo ${MONGOCXX_LIBRARIES} ${BSONCXX_LIBRARIES} ${BCRYPT_LIBRARIES} ${Boost_LIBRARIES})
-=======
+target_link_libraries(testMongo ${MONGOCXX_LIBRARIES} 
+                                ${BCRYPT_LIBRARY}
+                                ${BSONCXX_LIBRARIES} 
+                                ${Boost_LIBRARIES})
 
-add_executable(testMongo main.cpp)
 
-target_link_libraries(testMongo ${MONGOCXX_LIBRARIES} ${BSONCXX_LIBRARIES})
->>>>>>> 6da55aee34b570602d502dcbb34025608f34d10f
 

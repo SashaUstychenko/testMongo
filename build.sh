@@ -6,3 +6,6 @@ cmake ..
 make
 ./testMongo
 
+#sleep 2
+#google-chrome http://localhost:8080
+

@@ -1,35 +1,32 @@
-#include <bsoncxx/json.hpp>
-<<<<<<< HEAD
+#include <boost/asio/ip/tcp.hpp>
+#include <iostream>
+#include <string>
 #include <iterator>
-=======
->>>>>>> 6da55aee34b570602d502dcbb34025608f34d10f
+
+#include "bcrypt/BCrypt.hpp"
+
 #include <mongocxx/client.hpp>
 #include <mongocxx/instance.hpp>
 #include <mongocxx/uri.hpp>
-#include <iostream>
+
+#include <bsoncxx/json.hpp>
 #include <bsoncxx/builder/stream/document.hpp>
-<<<<<<< HEAD
-#include <string>
+
+
 #include <boost/filesystem.hpp>
-#include <bcrypt/bcrypt.h>
+#include <boost/asio.hpp>
 
 namespace fs = boost::filesystem;
-
-
 int main() {
 
-   std::string password = "mysecretpassword";
-    std::string salt = BCrypt::generate_salt();
-    std::string hashed_password = BCrypt::generate_hash(password, salt);
+  std::string password = "test";
+	std::string hash = BCrypt::generateHash(password);
 
-    std::cout << "Password: " << password << std::endl;
-    std::cout << "Salt: " << salt << std::endl;
-    std::cout << "Hashed Password: " << hashed_password << std::endl;
+	std::cout << BCrypt::validatePassword(password,hash) << std::endl;
+	std::cout << BCrypt::validatePassword("test1",hash) << std::endl;
 
-    bool password_is_valid = BCrypt::validate_password(password, hashed_password);
-    std::cout << "Password is valid: " << (password_is_valid ? "Yes" : "No") << std::endl;
 
- fs::path currentPath = fs::current_path();
+   fs::path currentPath = fs::current_path();
 
     std::cout << "Поточний каталог: " << currentPath << std::endl;
 
@@ -74,31 +71,5 @@ int main() {
 
 
   return 0;
-=======
-int main() {
-    mongocxx::instance instance{};
-    mongocxx::client client{mongocxx::uri{"mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.2.6"}};
-
-    auto db = client["SocialApp"];
-    bsoncxx::document::value doc = bsoncxx::builder::stream::document{}
-        << "name" << "MongoDB"
-        << "type" << "database"
-        << "count" << 1
-        << "versions" << bsoncxx::builder::stream::open_array
-            << "v3.2" << "v3.0" << "v2.6"
-        << bsoncxx::builder::stream::close_array
-        << "info" << bsoncxx::builder::stream::open_document
-            << "x" << 203
-            << "y" << 102
-        << bsoncxx::builder::stream::close_document
-        << bsoncxx::builder::stream::finalize;
-
-    auto collection = db["testcollection"];
-    collection.insert_one(doc.view());
-
-    std::cout<<"Document inserted!" << std::endl;
-
-    return 0;
->>>>>>> 6da55aee34b570602d502dcbb34025608f34d10f
 }
 
