@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/testMongo.dir/main.cpp.o"
   "CMakeFiles/testMongo.dir/main.cpp.o.d"
+  "CMakeFiles/testMongo.dir/timer.cpp.o"
+  "CMakeFiles/testMongo.dir/timer.cpp.o.d"
   "testMongo"
   "testMongo.pdb"
 )

@@ -26,7 +26,7 @@ include_directories(/usr/local/include/bsoncxx/v_noabi/bsoncxx/third_party/mnmls
 
 find_library(BCRYPT_LIBRARY bcrypt)
 
-add_executable(testMongo main.cpp)
+add_executable(testMongo main.cpp timer.cpp)
 target_link_libraries(testMongo ${MONGOCXX_LIBRARIES} 
                                 ${BCRYPT_LIBRARY}
                                 ${BSONCXX_LIBRARIES} 

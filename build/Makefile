@@ -153,6 +153,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/testMongo.dir/build.make CMakeFiles/testMongo.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+timer.o: timer.cpp.o
+.PHONY : timer.o
+
+# target to build an object file
+timer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testMongo.dir/build.make CMakeFiles/testMongo.dir/timer.cpp.o
+.PHONY : timer.cpp.o
+
+timer.i: timer.cpp.i
+.PHONY : timer.i
+
+# target to preprocess a source file
+timer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testMongo.dir/build.make CMakeFiles/testMongo.dir/timer.cpp.i
+.PHONY : timer.cpp.i
+
+timer.s: timer.cpp.s
+.PHONY : timer.s
+
+# target to generate assembly for a file
+timer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/testMongo.dir/build.make CMakeFiles/testMongo.dir/timer.cpp.s
+.PHONY : timer.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -165,6 +189,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... timer.o"
+	@echo "... timer.i"
+	@echo "... timer.s"
 .PHONY : help
 
 
