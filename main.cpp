@@ -1,13 +1,7 @@
-#include <bits/chrono.h>
-#include <ctime>
-#include <iomanip>
-#include <iostream>
-#include <string>
-#include <iterator>
-#include <thread>
 
 #include "bcrypt/BCrypt.hpp"
 
+#include <iostream>
 #include <mongocxx/client.hpp>
 #include <mongocxx/instance.hpp>
 #include <mongocxx/uri.hpp>
@@ -17,15 +11,13 @@
 
 #include <boost/filesystem.hpp>
 #include <boost/asio.hpp>
-#include <chrono>
-#include <vector>
 
 #include "Heders/Func.hpp"
 
 
 int main() 
 {
-  ANY::test_any();  
-}
+  LAMBDA::func2();
 
+}
 
