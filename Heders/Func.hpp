@@ -1,4 +1,7 @@
 #include <algorithm>
+#include <boost/asio/ip/address.hpp>
+#include <boost/system/detail/error_code.hpp>
+#include <functional>
 #include <stdexcept>
 #include <any>
 #include <cstddef>
@@ -15,6 +18,7 @@
 #include <vector>
 #include <chrono>
 #include "timer.hpp"
+#include "Templetes.hpp"
 #include <ctime>
 #include <ratio>
 #include <iomanip>
@@ -23,18 +27,201 @@
 #include <iostream>
 #include <execution>
 
-
+//BOOST_ASIO
+#include <boost/asio.hpp>
 
 
 using ULL = unsigned long long;
 using CLL = const long long ;
 using CLD = const long double;
+namespace BOOST_ASIO
+{
+}
+namespace TEMPLETE
+{
 
+  template <typename T> using pointer = T*;
+  pointer<int> p  = new int;
+
+  
+  template<typename T,typename V,typename U>
+  struct S
+  {
+    static void foo()
+    {
+      std::cout<<"General case "<<std::endl;
+    }
+  };
+  
+  template<typename V,typename U>
+  struct S<int, V, U>
+  {
+     static void foo()
+     {
+       std::cout<<"T=int "<<std::endl;
+     }
+  };
+template<typename U>
+  struct S<int,double, U>
+  {
+     static void foo()
+     {
+       std::cout<<"T=int V=double "<<std::endl;
+     }
+  };
+
+  void func6()
+  {
+    S<std::string,int, double>::foo();
+    S<int,float,std::string>::foo();
+    S<int ,double,std::string>::foo();
+  } 
+
+  
+
+  namespace variadicTemplate
+  {
+    template <typename ... T>
+    struct DataStructure{};
+
+    template<typename T,typename ... Rest>
+    struct DataStructure<T,Rest...>
+    {
+      DataStructure(const T& first,const Rest&... rest)
+        :first(first),rest(rest...)
+      {}
+
+
+      T first;
+      DataStructure<Rest...>rest;
+    };
+ 
+      void print(const DataStructure<>&)
+      {}
+
+      template<typename T,typename ...Rest>
+      void print(const DataStructure<T,Rest...>& ds)
+      {
+        std::cout<<ds.first<<std::endl;
+        print(ds.rest);
+      }  
+    void func1()
+    {
+      DataStructure<int,double,std::string>data(21,34.34,"sasha");
+      print(data);
+    }
+
+  }
+  template <typename T1,typename T2>
+  struct MyPair
+  {
+    T1 first;
+    T2 second;
+    
+   void show()
+   {
+     std::cout<<"first - "<<first<<std::endl<<"second - "<<second<<std::endl;
+   } 
+
+  };
+  
+  template <typename T1,typename T2>
+
+  MyPair<T1,T2> make_MyPair (T1 t1,T2 t2)
+  {
+    return MyPair<T1,T2>{t1,t2};
+
+  } 
+  void func4()
+  {
+    auto val1 = MyPair<int,double>{5,3.44};
+    auto val2 = make_MyPair(3,5.5454);
+    val1.show();
+    std::cout<<"val2 first - "<<val2.first<<"val2 second - "<<val2.second<<std::endl;
+
+
+  }
+
+
+
+
+  template <typename T>
+    void print_sum(T a,T b)
+    {
+      std::cout<<(a+b)<<std::endl;
+    }
+  void func2()
+  {
+
+  }
+  void func1()
+  {
+    Number<int>num;
+    num.setNum(1);
+    std::cout<<"My integer + 1 = "<<num.plus1()<<std::endl;
+    Number<double>num1;
+    num.setNum(1.435465766);
+    std::cout<<"My double + 1 = "<<num1.plus1()<<std::endl;
+
+
+
+  }
+}
+namespace macros 
+{
+  void t1()
+  {
+    std::cout<<__LINE__<<std::endl;
+    std::cout<<__FILE__<<std::endl;
+    std::cout<<__DATE__<<std::endl;
+    std::cout<<__TIME__<<std::endl;
+    std::cout<<__BASE_FILE__<<std::endl;
+  }
+}
 
 namespace LAMBDA
 {
+
+  
+  std::function<int(int,int)>gcd = [](int a,int b)
+  {
+    return b==0 ? a :gcd(b,a%b);
+  };
+  void func4()
+  {
+    int res = gcd(48,18);
+    std::cout<<res<<std::endl;
+  }
+  struct isleesthat
+  {
+    isleesthat(int threshold):threshold(threshold)
+     {}
+    
+      bool operator()(int value)const
+      {
+        return value>threshold;
+      }
+    
+    private:
+      int threshold;
+
+  };
+  void func3()
+  {
+    const int arr[] = {1,4,7,9,11,43,2,4};
+    std::vector<int>vector(arr,arr+7);
+    int numb = 10;
+    std::vector<int>::iterator it = std::find_if(vector.begin(),vector.end(),[numb](int value)
+    {
+        return value>numb;
+    });
+    std::cout<<*it;
+  
+  }
   void func2()
   {
+    auto funcL = [c=0]() mutable{++c;std::cout<<c;};
+    funcL();
     int num = 5;
 
     auto timesFive = [num](int a){return a*num;};

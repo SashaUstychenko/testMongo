@@ -13,11 +13,10 @@
 #include <boost/asio.hpp>
 
 #include "Heders/Func.hpp"
+#include "Heders/Func_C.h"
 
 
 int main() 
 {
-  LAMBDA::func2();
-
 }
 
