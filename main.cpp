@@ -18,5 +18,6 @@
 
 int main() 
 {
+  WORK_IN_FILE::func1();
 }
 
