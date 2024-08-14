@@ -18,6 +18,7 @@
 
 int main() 
 {
-  WORK_IN_FILE::func1();
+  TASKS_SINGLETON::func2();
+  
 }
 

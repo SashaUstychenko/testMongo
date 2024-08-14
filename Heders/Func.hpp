@@ -36,6 +36,130 @@
 //BOOST_ASIO
 #include <boost/asio.hpp>
 
+#include "Array.hpp"
+#include "Singleton.hpp"
+
+namespace TASKS_SINGLETON
+{
+  void func2()
+  {
+    TASKS2::LazySingleton* singleton = TASKS2::LazySingleton::getInstance();
+    singleton->SomeFunc();
+  }
+  void func1()
+  {
+    TASKS1::Singleton& singleton = TASKS1::Singleton::getInstance();
+    singleton.SomeFunc();
+  }
+}
+namespace PATTERN_SINGLETON
+{
+  void func3()
+  {
+    SINGLETON_LESONS3::ConfigurableSingleton& singleton = SINGLETON_LESONS3::ConfigurableSingleton::getInstance(42);
+    singleton.ShowValue();//--->44
+    //будь які подальші виклики вакористають початково викликаний екземпляр
+
+    SINGLETON_LESONS3::ConfigurableSingleton& singleton1 = SINGLETON_LESONS3::ConfigurableSingleton::getInstance(24);
+    singleton1.ShowValue();//--->44
+
+  }
+  void func2()
+  {
+    SINGLETON_LESONS2::TredSafeSingleton& singleton = SINGLETON_LESONS2::TredSafeSingleton::getInstance();
+    singleton.ShowMessage();
+  }
+  void func1()
+  {
+    SINGLETON_LESONS1::Singleton& singleton = SINGLETON_LESONS1::Singleton::getInstance();
+    singleton.ShowMessage();
+  }
+
+}
+
+
+
+
+namespace inheritance 
+{
+  namespace t2
+  {
+    void func1()
+    {
+      Array arr(5);
+      for(std::size_t i = 0;arr.Size();++i)
+      {
+        std::cout<<arr[i]<<" ";
+      }
+      std::cout<<std::endl;
+    }    
+  }
+  namespace t1 
+  {
+    struct Point
+    {
+
+    };
+    class Person
+    {
+
+    };
+    class Vehicle
+    {
+      private:
+
+       Point position;
+       double height;
+       double lenght; 
+       double width;
+     protected:
+       double weight;
+
+     public:
+       void Move(Point directin);
+       void Rotate(Point direction);
+       void Scale(float factor);
+
+    };
+    class Car : public Vehicle
+    {
+
+      private:
+        int doors;
+        int tankCapacity;
+        char model[30];
+        char mark[30];
+        bool isStarted;
+
+      public:
+        void FillUp(int points)
+        {
+          weight+=points;
+        }
+        void Start();
+        
+    };
+
+    class Plane
+    {
+
+      private:
+        int seets;
+        Point route[2];
+
+      public:
+        void AuthorizePeople(const Person* peopleList);
+        void Fly();
+        void CallDispatcher(Person dispatcher);
+        
+    };
+
+  }
+}
+
+
+
+
 namespace WORK_IN_FILE
 {
   void func1()
@@ -43,7 +167,7 @@ namespace WORK_IN_FILE
     std::string path = ".";
     for(const auto& entry : std::filesystem::directory_iterator(path))
     {
-      std::cout<<entry.path()<<Std::endl;
+      std::cout<<entry.path()<<std::endl;
     }
   }
   void func5441()

@@ -1605,4 +1605,6 @@ CMakeFiles/testMongo.dir/main.cpp.o: \
  /usr/include/c++/13/pstl/numeric_fwd.h \
  /usr/include/c++/13/pstl/glue_numeric_impl.h \
  /usr/include/c++/13/pstl/glue_memory_impl.h \
+ /home/zirer/zirerfile/fileC++/testMongo/Heders/Array.hpp \
+ /home/zirer/zirerfile/fileC++/testMongo/Heders/Singleton.hpp \
  /home/zirer/zirerfile/fileC++/testMongo/Heders/Func_C.h
