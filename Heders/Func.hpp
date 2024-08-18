@@ -6,6 +6,7 @@
 #include <fstream>
 #include <functional>
 #include <ios>
+#include <memory>
 #include <sstream>
 #include <stdexcept>
 #include <any>
@@ -38,9 +39,36 @@
 
 #include "Array.hpp"
 #include "Singleton.hpp"
+#include "FactoryMethod.hpp"
+
+namespace PATERN_FACTORY
+{
+  void func1()
+  {
+
+    std::unique_ptr<FACTORY_METHOD::TASK1::Creator>creatorA = std::make_unique<FACTORY_METHOD::TASK1::ConcreteCreateA>();
+    creatorA->someOperation();   
+    std::unique_ptr<FACTORY_METHOD::TASK1::Creator>creatorB = std::make_unique<FACTORY_METHOD::TASK1::ConcreteCreateB>();
+    creatorB->someOperation();
+ 
+    
+
+
+  }
+}
 
 namespace TASKS_SINGLETON
 {
+  void func4()
+  {
+    TASK_SENIOR_2::Singleton* singleton = TASK_SENIOR_2::Singleton::getInstance();
+    singleton->SomeFunc();
+  }
+  void func3()
+  {
+    TASK_SENIOR_1::Singleton* singleton = TASK_SENIOR_1::Singleton::getInstance();
+    singleton->Something();
+  }
   void func2()
   {
     TASKS2::LazySingleton* singleton = TASKS2::LazySingleton::getInstance();

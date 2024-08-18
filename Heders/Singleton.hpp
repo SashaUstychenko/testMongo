@@ -1,7 +1,80 @@
 #include <iostream>
+#include <memory>
 #include <mutex>
 
 
+namespace TASK_SENIOR_2
+{
+  
+
+
+  class Singleton 
+  {
+    private:
+      static std::unique_ptr<Singleton> instance;
+      Singleton(){};
+    public:
+      Singleton(const Singleton& other)= delete;
+      Singleton& operator=(const Singleton& other)= delete;
+
+      ~Singleton()
+      {
+        std::cout<<"singlrton constructor called"<<std::endl;
+      }
+
+      static Singleton* getInstance()
+      {
+        if(instance==nullptr)
+        {
+        instance.reset(new Singleton());
+        }
+        return instance.get();
+      }
+      void SomeFunc()
+      {
+        std::cout<<"2222222222222"<<std::endl;
+      }
+
+  };
+  
+  std::unique_ptr<Singleton> Singleton::instance = nullptr;
+}
+
+namespace TASK_SENIOR_1 
+{
+  class Singleton
+  {
+    private:
+      Singleton() = default;
+
+      static Singleton* instance;
+      static std::mutex mutex;
+
+    public:
+
+      static Singleton* getInstance()
+      {
+        if (instance==nullptr)
+        {
+          std::lock_guard<std::mutex> lock(mutex);        
+          if (instance==nullptr)
+          {
+            instance = new Singleton();         
+          }
+        }
+        return instance;
+      }
+      void Something()
+      {
+        std::cout<<"HEllllloooooooo"<<std::endl;
+      }
+
+
+  };
+
+Singleton* Singleton::instance = nullptr;
+std::mutex Singleton::mutex;
+}
 namespace TASKS2
 {
   class LazySingleton
@@ -48,35 +121,6 @@ namespace TASKS1
       }
   };
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 namespace SINGLETON_LESONS1

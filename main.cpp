@@ -18,7 +18,8 @@
 
 int main() 
 {
-  TASKS_SINGLETON::func2();
+  PATERN_FACTORY::func1();
+  
   
 }
 
