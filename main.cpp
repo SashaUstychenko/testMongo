@@ -18,7 +18,7 @@
 
 int main() 
 {
-  PATERN_FACTORY::func1();
+  PATERN_FACTORY::func3();
   
   
 }

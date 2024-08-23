@@ -7,6 +7,7 @@
 #include <functional>
 #include <ios>
 #include <memory>
+#include <mutex>
 #include <sstream>
 #include <stdexcept>
 #include <any>
@@ -43,6 +44,21 @@
 
 namespace PATERN_FACTORY
 {
+  void func3()
+  {
+    std::unique_ptr<FACTORY_METHOD::TASK3::UserFactory> adminFactory = std::make_unique<FACTORY_METHOD::TASK3::AdminFactory>();
+    std::unique_ptr<FACTORY_METHOD::TASK3::User>admin = adminFactory->createUser();
+    admin->accessRights();
+
+
+  }
+  void func2()
+  {
+    std::unique_ptr<FACTORY_METHOD::TASK2::DocumentFactory>pdfFactory = std::make_unique<FACTORY_METHOD::TASK2::PDF_Document_Factory>();
+    std::unique_ptr<FACTORY_METHOD::TASK2::Document>pdf = pdfFactory->createDocument();
+    pdf->print();
+
+  }
   void func1()
   {
 
