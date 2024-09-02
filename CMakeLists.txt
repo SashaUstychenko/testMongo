@@ -9,12 +9,13 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 find_package(PkgConfig REQUIRED)
 find_package(Boost REQUIRED COMPONENTS system filesystem)
-
+find_package(Curses REQUIRED)
 
 pkg_search_module(MONGOCXX REQUIRED libmongocxx)
 pkg_search_module(BSONCXX REQUIRED libbsoncxx)
 
 
+include_directories(${CURSES_INCLUDE_DIR})
 include_directories(${MONGOCXX_INCLUDE_DIRS})
 include_directories(${BSONCXX_INCLUDE_DIRS})
 include_directories(${Boost_INCLUDE_DIRS})
@@ -30,7 +31,8 @@ add_executable(testMongo main.cpp timer.cpp Array.cpp)
 target_link_libraries(testMongo ${MONGOCXX_LIBRARIES} 
                                 ${BCRYPT_LIBRARY}
                                 ${BSONCXX_LIBRARIES} 
-                                ${Boost_LIBRARIES})
+                                ${Boost_LIBRARIES}
+                                ${CURSES_LIBRARIES})
 
 
 

@@ -39,90 +39,12 @@
 #include <boost/asio.hpp>
 
 #include "Array.hpp"
-#include "Singleton.hpp"
-#include "FactoryMethod.hpp"
+#include "MONGO.hpp"
 
-namespace PATERN_FACTORY
+namespace exampleMongo
 {
-  void func3()
-  {
-    std::unique_ptr<FACTORY_METHOD::TASK3::UserFactory> adminFactory = std::make_unique<FACTORY_METHOD::TASK3::AdminFactory>();
-    std::unique_ptr<FACTORY_METHOD::TASK3::User>admin = adminFactory->createUser();
-    admin->accessRights();
-
-
-  }
-  void func2()
-  {
-    std::unique_ptr<FACTORY_METHOD::TASK2::DocumentFactory>pdfFactory = std::make_unique<FACTORY_METHOD::TASK2::PDF_Document_Factory>();
-    std::unique_ptr<FACTORY_METHOD::TASK2::Document>pdf = pdfFactory->createDocument();
-    pdf->print();
-
-  }
-  void func1()
-  {
-
-    std::unique_ptr<FACTORY_METHOD::TASK1::Creator>creatorA = std::make_unique<FACTORY_METHOD::TASK1::ConcreteCreateA>();
-    creatorA->someOperation();   
-    std::unique_ptr<FACTORY_METHOD::TASK1::Creator>creatorB = std::make_unique<FACTORY_METHOD::TASK1::ConcreteCreateB>();
-    creatorB->someOperation();
- 
-    
-
-
-  }
+  
 }
-
-namespace TASKS_SINGLETON
-{
-  void func4()
-  {
-    TASK_SENIOR_2::Singleton* singleton = TASK_SENIOR_2::Singleton::getInstance();
-    singleton->SomeFunc();
-  }
-  void func3()
-  {
-    TASK_SENIOR_1::Singleton* singleton = TASK_SENIOR_1::Singleton::getInstance();
-    singleton->Something();
-  }
-  void func2()
-  {
-    TASKS2::LazySingleton* singleton = TASKS2::LazySingleton::getInstance();
-    singleton->SomeFunc();
-  }
-  void func1()
-  {
-    TASKS1::Singleton& singleton = TASKS1::Singleton::getInstance();
-    singleton.SomeFunc();
-  }
-}
-namespace PATTERN_SINGLETON
-{
-  void func3()
-  {
-    SINGLETON_LESONS3::ConfigurableSingleton& singleton = SINGLETON_LESONS3::ConfigurableSingleton::getInstance(42);
-    singleton.ShowValue();//--->44
-    //будь які подальші виклики вакористають початково викликаний екземпляр
-
-    SINGLETON_LESONS3::ConfigurableSingleton& singleton1 = SINGLETON_LESONS3::ConfigurableSingleton::getInstance(24);
-    singleton1.ShowValue();//--->44
-
-  }
-  void func2()
-  {
-    SINGLETON_LESONS2::TredSafeSingleton& singleton = SINGLETON_LESONS2::TredSafeSingleton::getInstance();
-    singleton.ShowMessage();
-  }
-  void func1()
-  {
-    SINGLETON_LESONS1::Singleton& singleton = SINGLETON_LESONS1::Singleton::getInstance();
-    singleton.ShowMessage();
-  }
-
-}
-
-
-
 
 namespace inheritance 
 {

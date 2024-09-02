@@ -127,7 +127,11 @@ testMongo: CMakeFiles/testMongo.dir/build.make
 testMongo: /usr/local/lib/libbcrypt.a
 testMongo: /usr/lib/x86_64-linux-gnu/libboost_system.so.1.83.0
 testMongo: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.83.0
+testMongo: /usr/lib/x86_64-linux-gnu/libcurses.so
+testMongo: /usr/lib/x86_64-linux-gnu/libform.so
 testMongo: /usr/local/lib/libbcrypt.a
+testMongo: /usr/lib/x86_64-linux-gnu/libcurses.so
+testMongo: /usr/lib/x86_64-linux-gnu/libform.so
 testMongo: /usr/lib/x86_64-linux-gnu/libboost_atomic.so.1.83.0
 testMongo: CMakeFiles/testMongo.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/zirer/zirerfile/fileC++/testMongo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable testMongo"
