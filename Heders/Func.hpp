@@ -1,6 +1,7 @@
 #include <algorithm>
 #include <boost/asio/ip/address.hpp>
 #include <boost/system/detail/error_code.hpp>
+#include <cstdlib>
 #include <fcntl.h>
 #include <filesystem>
 #include <fstream>
@@ -40,10 +41,97 @@
 
 #include "Array.hpp"
 #include "MONGO.hpp"
+#include "AbstractFactory.hpp"
 
-namespace exampleMongo
+
+namespace ALG
 {
-  
+
+  void func02()
+  {
+     int i = 5;
+     std::vector<int> vec(i);
+     std::iota(vec.rbegin(),vec.rend(),1);
+     int sum = std::accumulate(vec.begin(),vec.end(),0);
+     std::cout<<sum;
+
+    
+
+  }
+void fun01()
+{
+  int i = 5;
+  std::vector<int> vec(i);
+  std::iota(vec.rbegin(),vec.rend(),1);
+  for(auto i : vec)
+    std::cout<<i<<" ";
+
+}
+
+
+
+  int func (std::vector<int>vec,int k)
+  {
+    int count = 0;
+  if (!vec.empty()) {
+        // Сортуємо вектор
+        std::sort(vec.begin(), vec.end());
+
+        // Перевіряємо середній елемент
+        if (vec[vec.size() / 2] > k) {
+            // Ітеруємо вектор у зворотному порядку
+            for (auto it = vec.rbegin(); it != vec.rend(); ++it) {
+                if (*it > k) {
+                    count++;
+                }
+            }
+        } else {
+            // Ітеруємо вектор у звичайному порядку
+            for (auto it = vec.begin(); it != vec.end(); ++it) {
+                if (*it > k) {
+                    count++;
+                }
+            }
+        }
+    }
+
+    return count;
+}
+void f1()
+{
+  std::vector<int>vec{4,6,3,2,7,4,5,7,};
+  std::cout<<func(vec, 5);
+
+}
+}
+
+
+namespace SYS_VYC 
+{
+  void t2()
+  {
+    for(const auto& entry : std::filesystem::directory_iterator("."))
+    {
+      std::cout<<entry.path()<<std::endl;
+    }
+  }
+  void t1()
+  {
+    system("ls -l");
+  }
+
+}
+
+namespace ABSTRACT_Factory
+{
+  void test1()
+  {
+    std::unique_ptr<AbstractFctory::AB_1::GUIFactory>factory;
+
+    factory = std::make_unique<AbstractFctory::AB_1::WindowsFactory>();
+    AbstractFctory::AB_1::renderUI(*factory);
+  }
+
 }
 
 namespace inheritance 
